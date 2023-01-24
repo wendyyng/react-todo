@@ -1,13 +1,26 @@
 import React, {useState} from 'react'
 import {IoIosCloseCircle} from 'react-icons/io'
 import {MdModeEditOutline} from 'react-icons/md'
+import TodoForm from './TodoForm'
 
-const Todo = ({todos, completeTodo, removeTodo, }) => {
+const Todo = ({todos, completeTodo, removeTodo, updateTodo }) => {
 
     const [edit, setEdit] = useState({
         id: null,
-        value: ""
+        value: ''
     })
+
+    const submitUpdate = value => {
+      updateTodo(edit.id, value)
+      setEdit({
+        id: null,
+        value: ''
+      })
+
+    }
+    if(edit.id) {
+      return <TodoForm edit={edit} onSubmit={submitUpdate}/>
+    }
 
     return (
             <div>
@@ -24,8 +37,6 @@ const Todo = ({todos, completeTodo, removeTodo, }) => {
                     onClick={() => completeTodo(todo.id)}
                     >
                       {todo.text}
-                    </div>
-                    <div>
                         <IoIosCloseCircle 
                         onClick={() => removeTodo(todo.id)}
                         className='delete-icon'

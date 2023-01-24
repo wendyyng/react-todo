@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 const TodoForm = (props) => {
-    const [input, setInput] = useState("")
-
-    useEffect(() => {
-        
-    })
+    const [input, setInput] = useState('')
 
     const handleChange = e => {
         setInput(e.target.value)
@@ -19,6 +15,7 @@ const TodoForm = (props) => {
             text: input,
             complete: false
         })
+        setInput('')
     }
 
   return (
