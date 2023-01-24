@@ -32,11 +32,7 @@ const Todo = ({todos, completeTodo, removeTodo, updateTodo }) => {
                   className={todo.complete ? 'todo-row complete' : 'todo-row'} 
                   key={index}
                   >
-                    <div
-                    key={todo.id}
-                    onClick={() => completeTodo(todo.id)}
-                    >
-                      {todo.text}
+                      <span key={todo.id} onClick={() => completeTodo(todo.id)}>{todo.text}</span>
                         <IoIosCloseCircle 
                         onClick={() => removeTodo(todo.id)}
                         className='delete-icon'
@@ -45,7 +41,6 @@ const Todo = ({todos, completeTodo, removeTodo, updateTodo }) => {
                         onClick={() => setEdit({id: todo.id, value: todo.text})}
                         className='edit-icon'
                         />
-                    </div>
 
                 </div>
                       

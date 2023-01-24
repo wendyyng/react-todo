@@ -12,8 +12,7 @@ const TodoForm = (props) => {
         e.preventDefault();
         props.onSubmit({
             id: uuidv4(),
-            text: input,
-            complete: false
+            text: input
         })
         setInput('')
     }

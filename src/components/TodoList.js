@@ -17,7 +17,7 @@ const TodoList = () => {
   const completeTodo = id => {
     let updatedTodos = todos.map(todo => {
         if(todo.id === id) {
-            todo.complete = !todo.complete
+            todo.complete = true
         }
         return todo
     })
@@ -39,7 +39,7 @@ const TodoList = () => {
     <div className="todo">
     <h1>React Todo App</h1>
     <TodoForm onSubmit={addTodo}/>
-    <Todo todos={todos} completeTOdo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
+    <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
     </div>
   )
 }

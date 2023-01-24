@@ -8,3 +8,7 @@
   border: solid black;
   width: 40%
 }
+
+.complete {
+  text-decoration: line-through
+}
